@@ -1,14 +1,13 @@
-
-
-var VideoListEntry = (props) => {
-  var video = props.video ? props.video : props.item;
+var VideoListEntry = ({video, setCurrentVideo}) => {
+  //var video = props.video ? props.video : props.item;
   return (
   <div className="video-list-entry">
     <div className="media-left media-middle">
       <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title" onClick={() => props.setCurrentVideo(video)}>{video.snippet.title}</div>
+      <div className="video-list-entry-title"
+           onClick={() => setCurrentVideo(video)}>{video.snippet.title}</div>
       <div className="video-list-entry-detail">{video.snippet.description}</div>
     </div>
   </div>
